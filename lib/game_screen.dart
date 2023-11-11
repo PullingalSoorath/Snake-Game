@@ -177,14 +177,12 @@ class _GameScreenState extends State<GameScreen> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          leading: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Text(
-              "Score ${snakePosition.length - 5}",
-              style: const TextStyle(fontSize: 20, fontFamily: 'HindBold'),
-            ),
+          centerTitle: true,
+          title: Text(
+            "Score ${snakePosition.length - 5}",
+            style: const TextStyle(fontSize: 25, fontFamily: 'HindBold'),
           ),
-          leadingWidth: double.infinity,
+          automaticallyImplyLeading: false,
           backgroundColor: Theme.of(context).colorScheme.background,
         ),
         backgroundColor: Theme.of(context).brightness == Brightness.dark
@@ -234,25 +232,19 @@ class _GameScreenState extends State<GameScreen> {
                     );
                   }
                   if (index == food) {
-                    return Container(
-                      padding: const EdgeInsets.all(2),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(5),
-                        child: Container(
-                          color: Colors.red,
-                        ),
-                      ),
+                    return Image.asset(
+                      'assets/images/apple.png',
                     );
                   } else {
                     return Container(
-                      padding: const EdgeInsets.all(2),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(5),
-                        child: Container(
-                            // color: Colors.grey[900],
-                            ),
-                      ),
-                    );
+                        // padding: const EdgeInsets.all(2),
+                        // child: ClipRRect(
+                        //   borderRadius: BorderRadius.circular(5),
+                        //   child: Container(
+                        //       // color: Colors.grey[900],
+                        //       ),
+                        // ),
+                        );
                   }
                 },
               ),
